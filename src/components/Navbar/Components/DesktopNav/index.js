@@ -80,6 +80,7 @@ export const Container = styled.div`
   justify-content: flex-end;
   font-size: 22px;
   margin: 0;
+  padding: 10px 175px 2px 175px;
   @media (max-width: 968px) {
     display: none;
   }

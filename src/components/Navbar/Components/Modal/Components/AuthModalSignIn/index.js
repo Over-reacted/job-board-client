@@ -143,7 +143,9 @@ export const Button = styled.div`
     props.close &&
     `
     width: 2rem;
-
+    pointer-events:auto;
+    cursor: pointer;
+    opacity: 1;
     font-size: 30px;
     background: transparent;
     align-self: center;
