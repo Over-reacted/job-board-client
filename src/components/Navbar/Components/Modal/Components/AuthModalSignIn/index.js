@@ -126,6 +126,13 @@ export const Button = styled.div`
     box-shadow: 0 1px 5px rgba(10, 10, 10, 0.8);
   }
   ${(props) =>
+    !props.isActive &&
+    `
+    pointer-events:none;
+    cursor: not-allowed;
+    opacity: 0.5;
+  `}
+  ${(props) =>
     props.signIn &&
     `
 

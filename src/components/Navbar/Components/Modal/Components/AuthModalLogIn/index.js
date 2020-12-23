@@ -44,7 +44,7 @@ export const AuthModalLogIn = ({ isChecked, setIsChecked }) => {
             ></Input>
           </FormGroup>
         </Credentials>
-        <Button type="submit" signIn onClick={onSubmit}>
+        <Button type="submit" signIn isActive={true} onClick={onSubmit}>
           Log In
         </Button>
 
