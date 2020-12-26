@@ -11,8 +11,13 @@ export const useForm = (props) => {
       [e.target.name]: e.target.value,
     }))
   }
-  // Print out the states on Submit
-  const handleSubmit = () => {
+  //
+  const onSubmit = () => {
+    /* GET the form {parameters}
+     * If existing => logIn the user
+     * If not matching => throw an error
+     * If non existent => register the User
+     */
     console.log(formState)
   }
 
