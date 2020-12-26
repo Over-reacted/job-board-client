@@ -27,7 +27,7 @@ export const Navbar = () => {
 
   const [activeHeader, setActiveHeader] = useState(0)
   const [searchBar, setSearchBar] = useState(false)
-  const [signIn, setSignIn] = useState(true)
+  const [signIn, setSignIn] = useState(false)
 
   const searchContainerRef = useRef(null)
   useClickOutside(searchContainerRef, () => setSearchBar(false))
