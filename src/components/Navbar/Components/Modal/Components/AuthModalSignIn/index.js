@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { useForm } from '../../../../../../hooks/useForm'
 
 export const AuthModalSignIn = ({ isChecked, setIsChecked }) => {
-  const { formState, handleChange, onSubmit } = useForm({
+  const { formState, handleChange, handleSubmit } = useForm({
     email: '',
     password: '',
     confirmPassword: '',
@@ -47,7 +47,7 @@ export const AuthModalSignIn = ({ isChecked, setIsChecked }) => {
           </FormGroup>
         </Credentials>
 
-        <Button signIn isActive={isChecked} onClick={onSubmit}>
+        <Button signIn isActive={isChecked} onClick={handleSubmit}>
           Sign In
         </Button>
         <Terms>

@@ -12,7 +12,7 @@ export const useForm = (props) => {
     }))
   }
   //
-  const onSubmit = () => {
+  const handleSubmit = () => {
     /* GET the form {parameters}
      * If existing => logIn the user
      * If not matching => throw an error
