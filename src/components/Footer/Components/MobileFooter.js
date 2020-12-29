@@ -30,7 +30,7 @@ const AnchorMobile = styled.a`
   text-align: center;
   cursor: pointer;
   color: #f8f9fa;
-  line-height: 30px;
+  line-height: 3rem;
   font-size: 1.2em;
 `
 
@@ -46,7 +46,7 @@ const Container = styled.div`
 `
 
 const HTotal = styled.b`
-  margin-right: 10px;
+  margin-right: 1rem;
   font-size: 1rem;
   color: #f8f9fa;
 `

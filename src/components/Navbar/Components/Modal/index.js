@@ -80,14 +80,14 @@ const Container = styled.div`
 const Wrapper = styled.div`
   margin-bottom: 15rem;
   display: flex;
-  font-size: 14px;
+  font-size: 1.4rem;
   flex-direction: column;
   justify-content: center;
   align-items: left;
   background: #fff;
-  padding: 20px;
+  padding: 2rem;
   box-shadow: 0 1rem 3rem #000;
-  border-radius: 10px;
+  border-radius: 1rem;
   @media (max-width: 968px) {
     height: 100vh;
     width: 100vh;

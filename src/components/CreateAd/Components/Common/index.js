@@ -47,8 +47,8 @@ export const RequiredIndicator = styled.span`
 
 const AdWrapper = styled.form`
   max-width: 95rem;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
-  border-radius: 4px;
+  box-shadow: 0 0.1rem 0.5rem rgba(0, 0, 0, 0.15);
+  border-radius: 0.4rem;
   background: #fff;
   padding: 1rem 3rem;
   margin: 0 auto;
@@ -64,7 +64,7 @@ const AdWrapper = styled.form`
 
   & input,
   & textarea {
-    font-size: 16.8px;
+    font-size: 1.68rem;
   }
 `
 

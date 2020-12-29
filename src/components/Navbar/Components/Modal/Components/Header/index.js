@@ -13,13 +13,13 @@ export const Header = () => {
 }
 
 const Wrap = styled.div`
-  margin-bottom: 40px;
+  margin-bottom: 4rem;
 `
 const Title = styled.h1`
-  font-size: 20px;
-  margin: 0 0 5px;
+  font-size: 2rem;
+  margin: 0 0 0.5rem;
 `
 const Description = styled.div`
-  font-size: 17px;
+  font-size: 1.7rem;
   opacity: 0.8;
 `

@@ -16,10 +16,10 @@ const InputFileUploadWrapper = styled.div`
   font-size: 0.95rem;
   padding: 1.6rem 1.2rem 1.6rem 1.2rem;
   cursor: auto;
-  border: 3px solid rgba(144, 146, 148, 0.2);
-  margin: 0 0 5px 0;
+  border: 0.3rem solid rgba(144, 146, 148, 0.2);
+  margin: 0 0 0.5rem 0;
   background-color: #f8f9fa;
-  outline: 2px none rgba(144, 146, 148, 0.2);
+  outline: 0.2rem none rgba(144, 146, 148, 0.2);
 
   position: relative;
 

@@ -28,14 +28,14 @@ export const Post = ({ adPost }) => {
 
 const ListEnt = styled.li`
   display: list-item;
-  margin-bottom: 8px;
+  margin-bottom: 0.8rem;
   position: relative;
-  padding: 18px 10px 18px 10px;
+  padding: 1.8rem 1rem 1.8rem 1rem;
   border: none;
   background-color: rgba(0, 170, 255, 0.2);
 
   @media only screen and (max-device-width: 480px) {
-    padding: 30px 10px;
+    padding: 3rem 1rem;
   }
 `
 
@@ -55,13 +55,13 @@ const Img = styled.div`
   background: white
     url('https://we-work-remotely.imgix.net/logos/0017/0021/logo.gif?ixlib=rails-4.0.0&w=50&h=50&dpr=2&fit=fill&auto=compress')
     center center/contain no-repeat;
-  border: 1px solid black;
+  border: 0.1rem solid black;
   position: absolute;
-  left: -35px;
+  left: -3.5rem;
   border-radius: 50%;
-  height: 50px;
-  width: 50px;
-  margin-top: 15px;
+  height: 5rem;
+  width: 5rem;
+  margin-top: 1.5rem;
   display: inline-block;
 `
 const PostUrl = styled.a`
@@ -72,47 +72,47 @@ const PostUrl = styled.a`
 const Span = styled.span`
   cursor: pointer;
   font-size: 1rem;
-  margin-left: 25px;
+  margin-left: 2.5rem;
   vertical-align: middle;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   display: inline-block;
-  max-width: calc(100% - 25px);
+  max-width: calc(100% - 2.5rem);
   text-decoration: none;
   color: black;
 `
 
 const Title = styled.span`
   cursor: pointer;
-  margin: 8px 10px 8px 25px;
+  margin: 0.8rem 1rem 0.8rem 2.5rem;
   vertical-align: middle;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   display: inline-block;
-  max-width: calc(100% - 25px);
+  max-width: calc(100% - 2.5rem);
   text-decoration: none;
   color: black;
   font-weight: bold;
 `
 const New = styled.span`
-  padding: 6px 8px 3px 8px;
+  padding: 0.6rem 0.8rem 0.3rem 0.8rem;
   margin: 0;
   text-transform: uppercase;
   font-size: 0.8rem;
   color: black;
   background-color: rgb(0, 170, 255);
-  top: 40px;
-  left: 842px;
+  top: 4rem;
+  left: 84.2rem;
   position: absolute;
   float: right;
-  border-radius: 3px;
+  border-radius: 0.3rem;
 
   @media only screen and (max-width: 480px) {
     font-size: 1rem;
     left: calc(100% - 25%) !important;
-    margin-top: 12px;
+    margin-top: 1.2rem;
   }
 
   @media only screen and (max-width: 1175px) {
@@ -121,13 +121,13 @@ const New = styled.span`
 `
 
 const Highlight = styled.span`
-  border-radius: 4px;
-  top: 8px;
-  left: 930px;
+  border-radius: 0.4rem;
+  top: 0.8rem;
+  left: 93rem;
   float: right;
   position: absolute;
-  height: 88px;
-  border-left: 4px solid rgb(0, 170, 255);
+  height: 8.8rem;
+  border-left: 0.4rem solid rgb(0, 170, 255);
 
   @media only screen and (max-width: 1175px) {
     left: calc(100% - 1%);
@@ -135,6 +135,6 @@ const Highlight = styled.span`
 
   @media only screen and (max-width: 480px) {
     left: calc(100% - 5%);
-    height: 112px;
+    height: 11.2rem;
   }
 `

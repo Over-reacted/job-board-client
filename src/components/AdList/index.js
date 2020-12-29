@@ -81,23 +81,23 @@ const List = styled.ul`
 
 const Article = styled.article`
   clear: both;
-  margin-bottom: 50px;
+  margin-bottom: 5rem;
   text-size-adjust: 100%;
 `
 
 const ListContainer = styled.div`
   margin: 0 auto;
-  max-width: 950px;
+  max-width: 95rem;
 
   @media only screen and (max-device-width: 480px) {
     width: auto;
   }
 
   @media only screen and (max-device-width: 1024px) {
-    max-width: 900px;
+    max-width: 90rem;
   }
 
   @media only screen and (max-device-width: 480px) {
-    padding: 10px 30px;
+    padding: 1rem 3rem;
   }
 `

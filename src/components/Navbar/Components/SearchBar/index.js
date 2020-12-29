@@ -15,11 +15,11 @@ export const Search = styled.input`
   display: ${(props) => (props.showSearch ? 'block' : 'none')};
   position: relative;
   width: 100%;
-  font-size: 15px;
-  margin: 0px 0px 10px 60px;
+  font-size: 1.5rem;
+  margin: 0px 0px 1rem 6rem;
   height: auto;
   border: none;
-  box-shadow: 0 1px 5px rgba(10, 10, 10, 0.3);
+  box-shadow: 0 0.1rem 0.5rem rgba(10, 10, 10, 0.3);
   float: left;
   &:active {
     border: none;
@@ -36,10 +36,10 @@ export const Search = styled.input`
     `
     box-shadow: none;
     display: block;
-  font-size: 16px;
+  font-size: 1.6rem;
   width: 93%;
   margin: 1rem;
-  padding: 4px;
+  padding: .4rem;
 
   `}
 `

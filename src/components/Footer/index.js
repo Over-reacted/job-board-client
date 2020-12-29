@@ -83,6 +83,6 @@ const FooterContainer = styled.div`
 
   @media (max-width: 600px) {
     text-align: center;
-    padding-bottom: 10px;
+    padding-bottom: 1rem;
   }
 `

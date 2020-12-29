@@ -6,7 +6,7 @@ import { Container, RequiredIndicator, Label } from '../index'
 const RadioButton = styled.input.attrs({
   type: 'radio',
 })`
-  margin-right: 3px;
+  margin-right: 0.3rem;
 `
 
 const RadioGroupWrapper = styled.div`

@@ -81,9 +81,9 @@ export const Logo = styled.img`
   &:hover {
     cursor: pointer;
   }
-  padding: 10px;
-  height: 50px;
-  width: 50px;
+  padding: 1rem;
+  height: 5rem;
+  width: 5rem;
   margin-right: auto;
   float: left;
   @media (min-width: 968px) {
@@ -104,7 +104,7 @@ export const MobileNavItem = styled.button`
   transition: 0.2s all;
   background: inherit;
   &:hover {
-    box-shadow: 0 1px 5px rgba(10, 10, 10, 0.8);
+    box-shadow: 0 0.1rem 0.5rem rgba(10, 10, 10, 0.8);
     color: red;
   }
   width: 100%;
@@ -113,10 +113,10 @@ export const MobileNavItem = styled.button`
   &:focus {
     outline: none;
   }
-  margin: 0 5px;
-  padding: 5px 15px 5px 5px;
+  margin: 0 0.5rem;
+  padding: 0.5rem 1.5rem 0.5rem 0.5rem;
 
-  border-top: 1px solid #ccc;
+  border-top: 0.1rem solid #ccc;
   ${(props) =>
     props.isExtended &&
     `
@@ -131,7 +131,7 @@ export const MobileNavItem = styled.button`
 export const CategoriesExpand = styled.div`
   display: ${(props) => (props.isActive == 1 ? 'block' : 'none')};
   background: inherit;
-  padding: 10px 0;
+  padding: 1rem 0;
 `
 
 export const Item = styled.li`

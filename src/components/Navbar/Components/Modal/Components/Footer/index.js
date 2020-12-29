@@ -30,7 +30,7 @@ export const Footer = ({ handleClose, activeForm, setLogIn, setSignIn }) => {
 }
 
 const SwitchForm = styled.div`
-  margin-left: 5px;
+  margin-left: 0.5rem;
   text-decoration: underline;
   cursor: pointer;
   &:hover {

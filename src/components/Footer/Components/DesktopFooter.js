@@ -91,7 +91,7 @@ const FooterContainer = styled.div`
 `
 
 const FooterLeft = styled.div`
-  padding-top: 25px;
+  padding-top: 2.5rem;
   flex-basis: 50%;
 `
 
@@ -106,21 +106,21 @@ const FooterTop = styled.div`
 `
 
 const Work = styled.h1`
-  font-size: 25px;
+  font-size: 2.5rem;
   color: rgba(255, 255, 255, 0.8);
 `
 
 const Text = styled.p`
-  font-size: 20px;
+  font-size: 2rem;
   color: rgba(255, 255, 255, 0.8);
 `
 
 const Anchor = styled.div`
   cursor: pointer;
   color: #f03e3e;
-  margin-top: 4px;
+  margin-top: 0.4rem;
   line-height: 2.5;
-  font-size: 16px;
+  font-size: 1.6rem;
 
   &:hover {
     opacity: 0.7;
@@ -128,7 +128,7 @@ const Anchor = styled.div`
 
   @media (max-width: 600px) {
     text-align: center;
-    padding-right: 40px;
+    padding-right: 4rem;
   }
 `
 
@@ -136,7 +136,7 @@ const FooterRight = styled.div`
   color: #9b9b9b;
   display: block;
   float: right;
-  padding-top: 25px;
+  padding-top: 2.5rem;
   font-family: 'Neufile Grotesk Regular', sans-serif;
 `
 
@@ -153,7 +153,7 @@ const Number = styled.div`
 const Job = styled.div`
   text-align: right;
   color: #f8f9fa;
-  letter-spacing: 1px;
+  letter-spacing: 0.1rem;
   font-size: 1.1em;
 
   @media (max-width: 600px) {
@@ -165,9 +165,9 @@ const Button = styled.button`
   background-color: #f03e3e;
   color: #ffffff;
   border: none;
-  padding: 15px 32px;
+  padding: 1.5rem 3.2rem;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 1.6rem;
   cursor: pointer;
   width: 100%;
   display: flex;
@@ -189,7 +189,7 @@ const Bottom = styled.h1`
   text-align: right;
   cursor: pointer;
   color: #ffffff;
-  font-size: 15px;
+  font-size: 1.5rem;
 
   @media (max-width: 600px) {
     display: none;
@@ -204,12 +204,12 @@ const Li = styled.li`
 
 const ResourcesBanner = styled.div`
   text-decoration: none;
-  font-size: 30px;
+  font-size: 3rem;
   display: block;
   text-size-adjust: 100%;
-  margin-top: 41px;
-  box-shadow: 0px 0px 2px;
-  top: 234px;
+  margin-top: 4.1rem;
+  box-shadow: 0px 0px 0.2rem;
+  top: 23.4rem;
   background: #4d5154;
 `
 
@@ -225,14 +225,14 @@ const Resources = styled.div`
 `
 
 const Ul = styled.ul`
-  font-size: 15px;
+  font-size: 1.5rem;
   display: inline-flex;
 `
 
 const Span = styled.span`
   font-family: 'Neufile Grotesk Regular', sans-serif;
   color: #f8f9fa;
-  padding: 10px;
+  padding: 1rem;
 
   @media (max-width: 600px) {
     display: none;
@@ -249,11 +249,11 @@ const Anchor1 = styled.div`
 `
 
 const BannerResources = styled.div`
-  font-family: 30px 'Neufile Grotesk Regular', sans-serif;
+  font-family: 3rem 'Neufile Grotesk Regular', sans-serif;
   display: block;
   background: #fffafa;
-  top: 235px;
-  padding-right: 10px;
+  top: 23.5rem;
+  padding-right: 1rem;
   width: 110%;
 
   @media (max-width: 600px) {
@@ -271,8 +271,8 @@ const Banner = styled.div`
 `
 
 const Ul1 = styled.ul`
-  font-size: 10px;
-  padding-right: 100px;
+  font-size: 1rem;
+  padding-right: 10rem;
   display: flex;
   justify-content: center;
   color: #000000;
@@ -286,7 +286,7 @@ const Li1 = styled.li`
 
 const Anchor2 = styled.div`
   cursor: pointer;
-  font-size: 10px;
+  font-size: 1rem;
   color: #000000;
 
   &:hover {
@@ -300,5 +300,5 @@ const Anchor2 = styled.div`
 
 const Span2 = styled.span`
   color: #000000;
-  padding: 0 24px 0 24px;
+  padding: 0 2.4rem 0 2.4rem;
 `

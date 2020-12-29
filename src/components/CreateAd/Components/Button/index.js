@@ -7,7 +7,7 @@ const Btn = styled.button`
   text-decoration: none;
   font-size: 1.5rem;
   padding: 1.6rem 3rem 1.6rem 3rem;
-  border-radius: 2px;
+  border-radius: 0.2rem;
   border-color: transparent;
   display: inline-block;
   cursor: pointer;

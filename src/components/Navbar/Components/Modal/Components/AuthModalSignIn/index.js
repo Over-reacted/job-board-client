@@ -74,25 +74,25 @@ export const Credentials = styled.div`
 export const FormGroup = styled.div`
   dislay: flex;
   flex-direction: column;
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
   vertical-align: baseline;
 `
 export const Label = styled.label``
 export const Input = styled.input`
-  width: 270px;
-  font-size: 16px;
-  padding: 4px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  margin-top: 3px;
+  width: 27rem;
+  font-size: 1.6rem;
+  padding: 0.4rem;
+  border: 0.1rem solid #ccc;
+  border-radius: 0.3rem;
+  margin-top: 0.3rem;
   &:focus {
     outline: none;
   }
   ${(props) =>
     props.password &&
     `
-        width: 100px;
-        margin-right: 10px;
+        width: 10rem;
+        margin-right: 1rem;
     `}
 `
 export const Flex = styled.div`
@@ -114,39 +114,39 @@ export const Button = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 19px;
+  font-size: 1.9rem;
   color: white;
   width: 5rem;
   height: 2rem;
   background: #f03e3e;
   cursor: pointer;
-  border-radius: 2px;
+  border-radius: 0.2rem;
   transition: all 0.3s;
   &:hover {
-    box-shadow: 0 1px 5px rgba(10, 10, 10, 0.8);
+    box-shadow: 0 0.1rem 0.5rem rgba(10, 10, 10, 0.8);
   }
   ${(props) =>
     props.signIn &&
     `
 
-    width: 280px;
-    margin-top: 10px;
+    width: 28rem;
+    margin-top: 1rem;
   `}
   ${(props) =>
     props.close &&
     `
     width: 2rem;
 
-    font-size: 30px;
+    font-size: 3rem;
     background: transparent;
     align-self: center;
     border-radius: 50%;
-    margin-top: 10px;
+    margin-top: 1rem;
     color: black;
   `}
 `
 export const Terms = styled.div`
-  padding-top: 20px;
+  padding-top: 2rem;
   display: flex;
   align-items: center;
 `
@@ -163,24 +163,24 @@ export const Customcheckbox = styled.div`
     background: #f03e3e;
     transform: rotate(45deg);
   `}
-  height: 15px;
-  width: 15px;
-  margin: 5px;
-  border: 1px solid #ccc;
+  height: 1.5rem;
+  width: 1.5rem;
+  margin: 0.5rem;
+  border: 0.1rem solid #ccc;
   &:hover {
     background: ${(props) => (props.isChecked ? '#d01e1e' : '#ccc')};
   }
 `
 export const Plain = styled.div`
   display: flex;
-  margin-top: 20px;
+  margin-top: 2rem;
   ${(props) =>
     props.text &&
     `
-  font-size: 13px;
+  font-size: 1.3rem;
   text-decoration: underline;
   width: fit-content;
-  margin: 10px;
+  margin: 1rem;
   &:hover {
     cursor: pointer;
     color: #f03e3e;

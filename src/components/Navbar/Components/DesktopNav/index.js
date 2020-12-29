@@ -78,22 +78,22 @@ export const Container = styled.div`
   display: flex;
   list-style: none;
   justify-content: flex-end;
-  font-size: 22px;
+  font-size: 2.2rem;
   margin: 0;
   @media (max-width: 968px) {
     display: none;
   }
 `
 export const Logo = styled.img`
-  padding: 10px;
-  height: 50px;
-  width: 50px;
+  padding: 1rem;
+  height: 5rem;
+  width: 5rem;
   margin-right: auto;
   float: left;
 `
 
 export const Item = styled.li`
-  padding: 10px 3px;
+  padding: 1rem 0.3rem;
   list-style: none;
   ${(props) =>
     props.Dropdown &&
@@ -108,8 +108,8 @@ export const NavigationItem = styled.button`
   border: none;
   outline: none;
   cursor: pointer;
-  padding: 14px 16px;
-  font-size: 17px;
+  padding: 1.4rem 1.6rem;
+  font-size: 1.7rem;
   &:hover {
     color: ${(props) => (props.Dropdown ? 'black' : 'red')};
     font-weight: ${(props) => (props.Dropdown ? 600 : 'normal')};
@@ -119,8 +119,8 @@ export const NavigationItem = styled.button`
     props.Dropdown &&
     `
     text-align: left;
-    width: 100px;
-    font-size: 14px;
+    width: 10rem;
+    font-size: 1.4rem;
   `}
 `
 export const Searching = styled(NavigationItem)`
@@ -137,10 +137,10 @@ export const Button = styled.button`
   color: white;
   height: 2rem;
   border: none;
-  border-radius: 2px;
+  border-radius: 0.2rem;
   transition: 0.2s all;
   &:hover {
-    box-shadow: 0 1px 5px rgba(10, 10, 10, 0.8);
+    box-shadow: 0 0.1rem 0.5rem rgba(10, 10, 10, 0.8);
   }
   &:focus {
     outline: none;
@@ -162,9 +162,9 @@ export const Dropdown = styled.div`
   z-index: 999999;
   background: white;
   position: fixed;
-  right: 280px;
-  top: 60px;
+  right: 28rem;
+  top: 6rem;
   display: ${(props) => (props.isActive ? 'block' : 'none')};
 
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0.1rem 0.5rem rgba(0, 0, 0, 0.15);
 `

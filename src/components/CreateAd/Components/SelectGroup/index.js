@@ -7,7 +7,7 @@ const Select = styled.select`
   font-size: 1.408rem;
   outline: none;
   height: 6rem;
-  border: 1.5px solid rgba(144, 146, 148, 0.2);
+  border: 0.15rem solid rgba(144, 146, 148, 0.2);
 `
 
 export const SelectGroup = ({
