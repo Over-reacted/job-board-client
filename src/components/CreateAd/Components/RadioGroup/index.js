@@ -50,7 +50,7 @@ export const RadioGroup = ({
           </div>
         ))}
       </RadioGroupWrapper>
-      {inputText}
+      <p>{inputText}</p>
     </Container>
   )
 }
