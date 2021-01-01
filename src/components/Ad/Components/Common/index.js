@@ -11,7 +11,7 @@ export const Title = styled.h1`
 `
 
 export const AdPostedDate = styled.h3`
-  font-size: 0.8rem;
+  font-size: 1.28rem;
   color: #4d5154;
   margin: 0 0 1.4rem 0;
   line-height: 1em;
