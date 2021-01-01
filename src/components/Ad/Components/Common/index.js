@@ -22,4 +22,5 @@ export const AdPostedDate = styled.h3`
 
 export const Description = styled.div`
   font-size: 1.76rem;
+  font-family: sans-serif;
 `
