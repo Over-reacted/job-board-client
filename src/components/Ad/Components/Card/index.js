@@ -22,6 +22,7 @@ const CardWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   font-family: sans-serif;
+  float: right;
 `
 
 const Logo = styled.div`
