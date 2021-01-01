@@ -15,14 +15,13 @@ const CardWrapper = styled.div`
   background: #f8f9fa;
   padding: 2.8rem 3.6rem 0 3.6rem;
   box-shadow: 0 0.1rem 0.5rem rgba(0, 0, 0, 0.15);
-  margin: 2rem -2.5rem 0 0;
+  margin: 2rem 0 0 auto;
   border-radius: 0.2rem;
   max-width: 30rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   font-family: sans-serif;
-  float: right;
 `
 
 const Logo = styled.div`
