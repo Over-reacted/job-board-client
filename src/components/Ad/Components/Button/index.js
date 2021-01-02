@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Btn = styled.a`
-  font-size: 1.44rem;
+  font-size: 1.6rem;
   background-color: #f03e3e;
   color: white;
   text-decoration: none;
