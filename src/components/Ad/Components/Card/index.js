@@ -17,7 +17,7 @@ const CardWrapper = styled.div`
   box-shadow: 0 0.1rem 0.5rem rgba(0, 0, 0, 0.15);
   margin: 2rem 0 0 auto;
   border-radius: 0.2rem;
-  max-width: 30rem;
+  max-width: 27rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -37,6 +37,7 @@ const Logo = styled.div`
 const Title = styled.h2`
   font-size: 2.56rem;
   margin: 1rem 0;
+  text-align: center;
 `
 
 const Location = styled.h3`
