@@ -29,7 +29,7 @@ export const Ad = () => {
       </Flex>
       <Flex>
         <FlexItem basis="65%">
-          <Margin top={3}>
+          <Margin top={4}>
             <AdPostedDate>Posted Jan 1</AdPostedDate>
           </Margin>
           <Title>Backend Engineer</Title>
