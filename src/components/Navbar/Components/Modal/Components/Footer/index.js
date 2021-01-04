@@ -21,7 +21,7 @@ export const Footer = ({ handleClose, activeForm, setLogIn, setSignIn }) => {
     <>
       <Flex column>
         <Plain>{activeFormData[activeForm]}</Plain>
-        <Button close onClick={handleClose}>
+        <Button close isActive={true} onClick={handleClose}>
           ×
         </Button>
       </Flex>

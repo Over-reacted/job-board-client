@@ -47,7 +47,7 @@ export const AuthModalSignIn = ({ isChecked, setIsChecked }) => {
           </FormGroup>
         </Credentials>
 
-        <Button signIn onClick={onSubmit}>
+        <Button signIn isActive={isChecked} onClick={onSubmit}>
           Sign In
         </Button>
         <Terms>
@@ -144,6 +144,12 @@ export const Button = styled.div`
     margin-top: 10px;
     color: black;
   `}
+
+  cursor:${props => props.isActive ? 'pointer' : 'not-allowed'};
+  pointer-events: ${props => props.isActive ? 'auto' : 'none'};
+  opacity: ${props => props.isActive ? '1' : '0.7'}
+
+
 `
 export const Terms = styled.div`
   padding-top: 20px;
