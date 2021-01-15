@@ -6,7 +6,7 @@ import { useClickOutside } from '../../../../hooks'
 import { Search } from '../SearchBar'
 import { Button } from '../DesktopNav'
 
-export const MobileNav = ({ setSignIn }) => {
+export const MobileNav = ({ setSignIn, isLoggedIn }) => {
   const [expand, setExpand] = useState(false)
   const [isVisible, setIsVisible] = useState(false)
 
@@ -26,44 +26,45 @@ export const MobileNav = ({ setSignIn }) => {
         <>
           <Container isActive={isVisible}>
             <Search isMobile placeholder="Search Here..." />
-            <Item ref={expandedContainerRef} isMobile>
+            <Item ref={expandedContainerRef} >
               <MobileNavItem onClick={() => setExpand(!expand)}>
                 Categories
                 <FontAwesomeIcon icon={faPlus} />
               </MobileNavItem>
             </Item>
             <CategoriesExpand isActive={expand}>
-              <Item isMobile>
+              <Item >
                 <MobileNavItem isExtended>Mobiles</MobileNavItem>
               </Item>
-              <Item isMobile>
+              <Item >
                 <MobileNavItem isExtended>PC</MobileNavItem>
               </Item>
-              <Item isMobile>
+              <Item >
                 <MobileNavItem isExtended>Laptops</MobileNavItem>
               </Item>
             </CategoriesExpand>
 
-            <Item isMobile>
+            <Item >
               <MobileNavItem>
                 How to post an ad
                 <FontAwesomeIcon icon={faAngleRight} />
               </MobileNavItem>
             </Item>
 
-            <Item isMobile>
+            <Item >
               <MobileNavItem>
                 About us
                 <FontAwesomeIcon icon={faAngleRight} />
               </MobileNavItem>
             </Item>
-            <Item isMobile>
+            <Item >
               <MobileNavItem>
                 Community
                 <FontAwesomeIcon icon={faAngleRight} />
               </MobileNavItem>
             </Item>
-            <Button onClick={setSignIn}>Sign Up</Button>
+            {!isLoggedIn && <Button onClick={setSignIn} isMobile>Sign Up</Button>}
+            {isLoggedIn && <ProfilePic></ProfilePic>}
           </Container>
         </>
       )}
@@ -126,6 +127,13 @@ export const MobileNavItem = styled.button`
 
   `}
 `
+export const ProfilePic = styled.div`
+width: 50px;
+height: 50px;
+margin-left: 1rem;
+border-radius: 50%;
+  content:url(https://i.pinimg.com/originals/83/46/bc/8346bcb80380e7f21ba1d7ab8b570d85.png);
+`
 
 // Need to add expand containers for all the menu items
 export const CategoriesExpand = styled.div`
@@ -138,3 +146,4 @@ export const Item = styled.li`
   padding: 0px;
   list-style: none;
 `
+

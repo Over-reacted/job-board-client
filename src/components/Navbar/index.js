@@ -28,6 +28,7 @@ export const Navbar = () => {
 
   const [searchBar, setSearchBar] = useState(false)
   const [signIn, setSignIn] = useState(false)
+  const[isLoggedIn, setIsLoggedIn] = useState(true)
 
   const searchContainerRef = useRef(null)
   useClickOutside(searchContainerRef, () => setSearchBar(false))
@@ -36,12 +37,12 @@ export const Navbar = () => {
     <>
       {signIn && <Modal handleClose={() => setSignIn(false)} />}
 
-      <MobileNav setSignIn={() => setSignIn(true)} />
+      <MobileNav isLoggedIn={isLoggedIn} setSignIn={() => setSignIn(true)} />
       <div ref={searchContainerRef}>
         <DesktopNav
           showSearchBar={setSearchBar}
           data={navig}
-
+          isLoggedIn={isLoggedIn}
           signIn={signIn}
           setSignIn={setSignIn}
         />

@@ -8,6 +8,7 @@ export const DesktopNav = ({
   showSearchBar,
   data,
   setSignIn,
+  isLoggedIn
 }) => {
   // const searchContainerRef = useRef(null)
   // useClickOutside(searchContainerRef, () => showSearchBar(false))
@@ -65,9 +66,10 @@ export const DesktopNav = ({
             </Searching>
           </NavigationItem>
         </Item>
-        <Button isRegular onClick={() => setSignIn(true)}>
+        {!isLoggedIn && <Button isRegular onClick={() => setSignIn(true)}>
           <strong>Sign In</strong>
-        </Button>
+        </Button>}
+        {isLoggedIn && <ProfilePic></ProfilePic>}
       </Container>
     </>
   )
@@ -156,6 +158,18 @@ export const Button = styled.button`
     `
   width: 5rem;
   `}
+  ${props => props.isMobile &&`
+    font-size: 0.8rem;
+    padding: 0 5px;
+  `}
+`
+export const ProfilePic = styled.div`
+width: 40px;
+height: 40px;
+margin-top: 13px;
+border-radius: 50%;
+cursor:pointer;
+  content:url(https://i.pinimg.com/originals/83/46/bc/8346bcb80380e7f21ba1d7ab8b570d85.png);
 `
 
 export const Dropdown = styled.div`
