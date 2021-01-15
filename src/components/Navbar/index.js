@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react'
-import { MobileNav, SearchBar, Header, DesktopNav } from './Components'
+import { MobileNav, SearchBar, DesktopNav } from './Components'
 import { Modal } from './Components/Modal/'
 import { useClickOutside } from '../../hooks'
 
@@ -25,7 +25,7 @@ export const Navbar = () => {
     },
   ]
 
-  const [activeHeader, setActiveHeader] = useState(0)
+
   const [searchBar, setSearchBar] = useState(false)
   const [signIn, setSignIn] = useState(false)
 
@@ -41,13 +41,13 @@ export const Navbar = () => {
         <DesktopNav
           showSearchBar={setSearchBar}
           data={navig}
-          setActiveHeader={setActiveHeader}
+
           signIn={signIn}
           setSignIn={setSignIn}
         />
         <SearchBar showSearch={searchBar} />
       </div>
-      <Header data={navig} isActive={activeHeader} />
+
     </>
   )
 }

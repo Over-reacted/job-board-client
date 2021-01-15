@@ -1,10 +1,11 @@
 import React from 'react'
-import { Navbar, Footer, AdList } from '../src/components'
+import { Navbar, Footer, AdList, Header } from '../src/components'
 
 const Home = () => {
   return (
     <>
       <Navbar />
+      <Header />
       <AdList />
       <Footer />
     </>

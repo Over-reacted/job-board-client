@@ -6,7 +6,6 @@ import { useClickOutside } from '../../../../hooks'
 
 export const DesktopNav = ({
   showSearchBar,
-  setActiveHeader,
   data,
   setSignIn,
 }) => {
@@ -163,7 +162,7 @@ export const Dropdown = styled.div`
   z-index: 999999;
   background: white;
   position: fixed;
-  right: 280px;
+  right: 455px;
   top: 60px;
   display: ${(props) => (props.isActive ? 'block' : 'none')};
 

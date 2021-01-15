@@ -71,5 +71,5 @@ const SocialButton = styled.div`
   }
 `
 const BtnText = styled.div`
-  padding-left: 2.5rem;
+  padding-left: 2rem;
 `

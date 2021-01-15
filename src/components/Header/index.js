@@ -1,12 +1,12 @@
 import React, { useState, useRef } from 'react'
 import styled from 'styled-components'
 
-export const Header = ({ isActive, data }) => {
+export const Header = () => {
   return (
     <Container>
-      <h1>{data[isActive].label}</h1>
+      <h1>Home</h1>
       <Description>
-        {data[isActive].description} <br />
+        Welcome to Overreacted <br />
         <Button>
           <strong>Post an Ad</strong>
         </Button>
