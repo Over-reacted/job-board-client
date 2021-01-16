@@ -13,7 +13,7 @@ import {
   Plain,
 } from '../AuthModalSignIn'
 
-export const AuthModalLogIn = ({ isChecked, setIsChecked }) => {
+export const AuthModalLogIn = ({ isChecked, setIsChecked, handleLogIn }) => {
   const { formState, handleChange, handleSubmit } = useForm({
     email: '',
     password: '',
@@ -44,7 +44,7 @@ export const AuthModalLogIn = ({ isChecked, setIsChecked }) => {
             ></Input>
           </FormGroup>
         </Credentials>
-        <Button type="submit" signIn isActive={true} onClick={handleSubmit}>
+        <Button type="submit" signIn isActive={true} onClick={/*handleSubmit,*/handleLogIn}>
           Log In
         </Button>
 

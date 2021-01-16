@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import { useForm } from '../../../../../../hooks/useForm'
 
-export const AuthModalSignIn = ({ isChecked, setIsChecked }) => {
+export const AuthModalSignIn = ({ isChecked, setIsChecked, handleLogIn }) => {
   const { formState, handleChange, handleSubmit } = useForm({
     email: '',
     password: '',
@@ -47,7 +47,7 @@ export const AuthModalSignIn = ({ isChecked, setIsChecked }) => {
           </FormGroup>
         </Credentials>
 
-        <Button signIn isActive={isChecked} onClick={handleSubmit}>
+        <Button signIn isActive={isChecked} onClick={/*handleSubmit*/ handleLogIn }>
           Sign In
         </Button>
         <Terms>

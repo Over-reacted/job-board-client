@@ -28,7 +28,7 @@ export const DesktopNav = ({
     { id: 2, label: 'My Jobs', href: './posted-jobs' },
     { id: 3, label: 'Applications', href: './applications' },
     { id: 'line', label: '-------------------------', href: './applications' },
-    { id: 5, label: 'Log Out', href: './mobiles' },
+    { id: 'logout', label: 'Log Out', href: './mobiles' },
   ]
   return (
     <>
@@ -86,8 +86,8 @@ export const DesktopNav = ({
                     return (
                       <Item key={dropItem.id} Dropdown>
                         <NavigationItem
-                        line={dropItem.id}
-                        onClick={ /*If it is log out button*/ () => setIsLoggedIn(false)}
+                        id={dropItem.id}
+                        onClick={ /*If it is log out button*/ () => dropItem.id === 'logout' ? setIsLoggedIn(false) : null}
                         Dropdown>
                           {dropItem.label}
                         </NavigationItem>
@@ -136,12 +136,12 @@ export const NavigationItem = styled.button`
   color: #000;
   border: none;
   outline: none;
-  cursor:${props => props.line != 'line' ? 'pointer' : 'default' } ;
-  padding: ${props => props.line != 'line' ? '14px 16px' : '0px 5px' } ;;
+  cursor:${props => props.id != 'line' ? 'pointer' : 'default' } ;
+  padding: ${props => props.id != 'line' ? '14px 16px' : '0px 5px' } ;;
   font-size: 17px;
   &:hover {
     color: ${(props) => (props.Dropdown  ? 'black' : 'red')};
-    font-weight: ${(props) => (props.Dropdown && (props.line != 'line') ? 600 : 'normal')};
+    font-weight: ${(props) => (props.Dropdown && (props.id != 'line') ? 600 : 'normal')};
   }
   overflow: hidden;
   ${(props) =>
