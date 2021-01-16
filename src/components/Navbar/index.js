@@ -43,6 +43,7 @@ export const Navbar = () => {
           showSearchBar={setSearchBar}
           data={navig}
           isLoggedIn={isLoggedIn}
+          setIsLoggedIn={setIsLoggedIn}
           signIn={signIn}
           setSignIn={setSignIn}
         />

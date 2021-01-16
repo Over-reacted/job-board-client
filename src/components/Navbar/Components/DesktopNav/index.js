@@ -8,18 +8,27 @@ export const DesktopNav = ({
   showSearchBar,
   data,
   setSignIn,
-  isLoggedIn
+  isLoggedIn,
+  setIsLoggedIn
 }) => {
-  // const searchContainerRef = useRef(null)
-  // useClickOutside(searchContainerRef, () => showSearchBar(false))
+  const profileDropDownRef = useRef(null)
+  useClickOutside(profileDropDownRef, () => setShowProfileDropDown(false))
 
   const [showDropdown, setShowDropdown] = useState(false)
+  const [showProfileDropDown, setShowProfileDropDown] = useState (false)
 
   const DropdownData = [
     { id: 1, label: 'PC', href: './pc' },
     { id: 2, label: 'Laptops', href: './laptops' },
     { id: 3, label: 'Consoles', href: './consoles' },
     { id: 4, label: 'Mobiles', href: './mobiles' },
+  ]
+  const ProfileDropDownData =[
+    { id: 1, label: 'My Profile', href: './profile' },
+    { id: 2, label: 'My Jobs', href: './posted-jobs' },
+    { id: 3, label: 'Applications', href: './applications' },
+    { id: 'line', label: '-------------------------', href: './applications' },
+    { id: 5, label: 'Log Out', href: './mobiles' },
   ]
   return (
     <>
@@ -37,7 +46,7 @@ export const DesktopNav = ({
                     {item.label}
                   </NavigationItem>
                 </Item>
-                <Dropdown isActive={showDropdown}>
+                <Dropdown isLoggedIn={isLoggedIn} isActive={showDropdown}>
                   {DropdownData.map((dropItem) => {
                     return (
                       <Item key={dropItem.id} Dropdown>
@@ -69,7 +78,24 @@ export const DesktopNav = ({
         {!isLoggedIn && <Button isRegular onClick={() => setSignIn(true)}>
           <strong>Sign In</strong>
         </Button>}
-        {isLoggedIn && <ProfilePic></ProfilePic>}
+        {isLoggedIn &&
+        <div onMouseLeave={() => setShowProfileDropDown(false)}>
+          <ProfilePic onMouseEnter={() => setShowProfileDropDown(true)}></ProfilePic>
+          <ProfileDropDown isActive={showProfileDropDown} >
+          {ProfileDropDownData.map((dropItem) => {
+                    return (
+                      <Item key={dropItem.id} Dropdown>
+                        <NavigationItem
+                        line={dropItem.id}
+                        onClick={ /*If it is log out button*/ () => setIsLoggedIn(false)}
+                        Dropdown>
+                          {dropItem.label}
+                        </NavigationItem>
+                      </Item>
+                    )
+                  })}
+          </ProfileDropDown>
+        </div>}
       </Container>
     </>
   )
@@ -88,10 +114,10 @@ export const Container = styled.div`
 `
 export const Logo = styled.img`
   padding: 10px;
-  height: 50px;
-  width: 50px;
+  height: 80px;
+  width: 80px;
   margin-right: auto;
-  float: left;
+
 `
 
 export const Item = styled.li`
@@ -103,27 +129,31 @@ export const Item = styled.li`
   padding: 0;
   margin: 0;
   `}
+
 `
 export const NavigationItem = styled.button`
   background-color: inherit;
   color: #000;
   border: none;
   outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
+  cursor:${props => props.line != 'line' ? 'pointer' : 'default' } ;
+  padding: ${props => props.line != 'line' ? '14px 16px' : '0px 5px' } ;;
   font-size: 17px;
   &:hover {
-    color: ${(props) => (props.Dropdown ? 'black' : 'red')};
-    font-weight: ${(props) => (props.Dropdown ? 600 : 'normal')};
+    color: ${(props) => (props.Dropdown  ? 'black' : 'red')};
+    font-weight: ${(props) => (props.Dropdown && (props.line != 'line') ? 600 : 'normal')};
   }
   overflow: hidden;
   ${(props) =>
     props.Dropdown &&
     `
     text-align: left;
-    width: 100px;
+    width: fit-content;
     font-size: 14px;
+
   `}
+
+
 `
 export const Searching = styled(NavigationItem)`
   display: block;
@@ -176,8 +206,19 @@ export const Dropdown = styled.div`
   z-index: 999999;
   background: white;
   position: fixed;
-  right: 455px;
+  right:${props => props.isLoggedIn ? "385px": "455px"};
   top: 60px;
+  display: ${(props) => (props.isActive ? 'block' : 'none')};
+
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+`
+export const ProfileDropDown = styled.div`
+  z-index: 999999;
+  background: white;
+  position: fixed;
+  width: 130px;
+  right:90px;
+  top: 70px;
   display: ${(props) => (props.isActive ? 'block' : 'none')};
 
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
