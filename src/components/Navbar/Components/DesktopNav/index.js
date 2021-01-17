@@ -27,8 +27,8 @@ export const DesktopNav = ({
     { id: 1, label: 'My Profile', href: './profile' },
     { id: 2, label: 'My Jobs', href: './posted-jobs' },
     { id: 3, label: 'Applications', href: './applications' },
-    { id: 'line', label: '-------------------------', href: './applications' },
-    { id: 'logout', label: 'Log Out', href: './mobiles' },
+    { id: 'line', label: '-------------------------' },
+    { id: 'logout', label: 'Log Out', click: () => {setIsLoggedIn(false); setSignIn(false)} },
   ]
   return (
     <>
@@ -87,7 +87,7 @@ export const DesktopNav = ({
                       <Item key={dropItem.id} Dropdown>
                         <NavigationItem
                         id={dropItem.id}
-                        onClick={ /*If it is log out button*/ () => dropItem.id === 'logout' ? setIsLoggedIn(false) : null}
+                        onClick={dropItem.click}
                         Dropdown>
                           {dropItem.label}
                         </NavigationItem>
@@ -205,8 +205,9 @@ cursor:pointer;
 export const Dropdown = styled.div`
   z-index: 999999;
   background: white;
+  width: 110px;
   position: fixed;
-  right:${props => props.isLoggedIn ? "385px": "455px"};
+  right:${props => props.isLoggedIn ? "375px": "445px"};
   top: 60px;
   display: ${(props) => (props.isActive ? 'block' : 'none')};
 

@@ -9,7 +9,7 @@ import { useClickOutside } from '../../../../hooks'
 
 import { Portal } from '../Portal'
 
-export const Modal = ({ handleClose, handleLogIn, isLogged }) => {
+export const Modal = ({ handleClose, handleLogIn }) => {
   const escFunction = useCallback((event) => {
     if (event.keyCode === 27) {
       handleClose()
@@ -37,14 +37,14 @@ export const Modal = ({ handleClose, handleLogIn, isLogged }) => {
             <MainForm>
               <Header />
               <FlexMain>
-                {activeForm == 'SignIn' && !isLogged && (
+                {activeForm == 'SignIn' &&  (
                   <AuthModalSignIn
                     isChecked={isChecked}
                     setIsChecked={setIsChecked}
                     handleLogIn={handleLogIn}
                   />
                 )}
-                {activeForm == 'LogIn' && !isLogged && (
+                {activeForm == 'LogIn' && (
                   <AuthModalLogIn
                     isChecked={isChecked}
                     setIsChecked={setIsChecked}
