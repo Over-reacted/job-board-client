@@ -9,13 +9,13 @@ export const DesktopNav = ({
   data,
   setSignIn,
   isLoggedIn,
-  setIsLoggedIn
+  setIsLoggedIn,
 }) => {
   const profileDropDownRef = useRef(null)
   useClickOutside(profileDropDownRef, () => setShowProfileDropDown(false))
 
   const [showDropdown, setShowDropdown] = useState(false)
-  const [showProfileDropDown, setShowProfileDropDown] = useState (false)
+  const [showProfileDropDown, setShowProfileDropDown] = useState(false)
 
   const DropdownData = [
     { id: 1, label: 'PC', href: './pc' },
@@ -23,12 +23,19 @@ export const DesktopNav = ({
     { id: 3, label: 'Consoles', href: './consoles' },
     { id: 4, label: 'Mobiles', href: './mobiles' },
   ]
-  const ProfileDropDownData =[
+  const ProfileDropDownData = [
     { id: 1, label: 'My Profile', href: './profile' },
     { id: 2, label: 'My Jobs', href: './posted-jobs' },
     { id: 3, label: 'Applications', href: './applications' },
     { id: 'line', label: '-------------------------' },
-    { id: 'logout', label: 'Log Out', click: () => {setIsLoggedIn(false); setSignIn(false)} },
+    {
+      id: 'logout',
+      label: 'Log Out',
+      click: () => {
+        setIsLoggedIn(false)
+        setSignIn(false)
+      },
+    },
   ]
   return (
     <>
@@ -46,10 +53,14 @@ export const DesktopNav = ({
                     {item.label}
                   </NavigationItem>
                 </Item>
-                <Dropdown isLoggedIn={isLoggedIn} isActive={showDropdown}>
+                <Dropdown
+                  isCategories={true}
+                  isLoggedIn={isLoggedIn}
+                  isActive={showDropdown}
+                >
                   {DropdownData.map((dropItem) => {
                     return (
-                      <Item key={dropItem.id} Dropdown>
+                      <Item key={dropItem.id} Dropdown isActive={showDropdown}>
                         <NavigationItem Dropdown>
                           {dropItem.label}
                         </NavigationItem>
@@ -75,27 +86,37 @@ export const DesktopNav = ({
             </Searching>
           </NavigationItem>
         </Item>
-        {!isLoggedIn && <Button isRegular onClick={() => setSignIn(true)}>
-          <strong>Sign In</strong>
-        </Button>}
-        {isLoggedIn &&
-        <div onMouseLeave={() => setShowProfileDropDown(false)}>
-          <ProfilePic onMouseEnter={() => setShowProfileDropDown(true)}></ProfilePic>
-          <ProfileDropDown isActive={showProfileDropDown} >
-          {ProfileDropDownData.map((dropItem) => {
-                    return (
-                      <Item key={dropItem.id} Dropdown>
-                        <NavigationItem
-                        id={dropItem.id}
-                        onClick={dropItem.click}
-                        Dropdown>
-                          {dropItem.label}
-                        </NavigationItem>
-                      </Item>
-                    )
-                  })}
-          </ProfileDropDown>
-        </div>}
+        {!isLoggedIn && (
+          <Button isRegular onClick={() => setSignIn(true)}>
+            <strong>Sign In</strong>
+          </Button>
+        )}
+        {isLoggedIn && (
+          <div onMouseLeave={() => setShowProfileDropDown(false)}>
+            <ProfilePic
+              onMouseEnter={() => setShowProfileDropDown(true)}
+            ></ProfilePic>
+            <Dropdown isProfile={true} isActive={showProfileDropDown}>
+              {ProfileDropDownData.map((dropItem) => {
+                return (
+                  <Item
+                    key={dropItem.id}
+                    Dropdown
+                    isActive={showProfileDropDown}
+                  >
+                    <NavigationItem
+                      id={dropItem.id}
+                      onClick={dropItem.click}
+                      Dropdown
+                    >
+                      {dropItem.label}
+                    </NavigationItem>
+                  </Item>
+                )
+              })}
+            </Dropdown>
+          </div>
+        )}
       </Container>
     </>
   )
@@ -117,7 +138,6 @@ export const Logo = styled.img`
   height: 80px;
   width: 80px;
   margin-right: auto;
-
 `
 
 export const Item = styled.li`
@@ -128,20 +148,27 @@ export const Item = styled.li`
     `
   padding: 0;
   margin: 0;
-  `}
+  display:none;
 
+  `}
+  ${(props) =>
+    props.isActive &&
+    `
+  display:block;
+  `}
 `
 export const NavigationItem = styled.button`
   background-color: inherit;
   color: #000;
   border: none;
   outline: none;
-  cursor:${props => props.id != 'line' ? 'pointer' : 'default' } ;
-  padding: ${props => props.id != 'line' ? '14px 16px' : '0px 5px' } ;;
+  cursor: ${(props) => (props.id != 'line' ? 'pointer' : 'default')};
+  padding: ${(props) => (props.id != 'line' ? '14px 16px' : '0px 5px')};
   font-size: 17px;
   &:hover {
-    color: ${(props) => (props.Dropdown  ? 'black' : 'red')};
-    font-weight: ${(props) => (props.Dropdown && (props.id != 'line') ? 600 : 'normal')};
+    color: ${(props) => (props.Dropdown ? 'black' : 'red')};
+    font-weight: ${(props) =>
+      props.Dropdown && props.id != 'line' ? 600 : 'normal'};
   }
   overflow: hidden;
   ${(props) =>
@@ -152,8 +179,6 @@ export const NavigationItem = styled.button`
     font-size: 14px;
 
   `}
-
-
 `
 export const Searching = styled(NavigationItem)`
   display: block;
@@ -188,39 +213,54 @@ export const Button = styled.button`
     `
   width: 5rem;
   `}
-  ${props => props.isMobile &&`
+  ${(props) =>
+    props.isMobile &&
+    `
     font-size: 0.8rem;
     padding: 0 5px;
   `}
 `
 export const ProfilePic = styled.div`
-width: 40px;
-height: 40px;
-margin-top: 13px;
-border-radius: 50%;
-cursor:pointer;
-  content:url(https://i.pinimg.com/originals/83/46/bc/8346bcb80380e7f21ba1d7ab8b570d85.png);
+  width: 40px;
+  height: 40px;
+  margin-top: 13px;
+  border-radius: 50%;
+  cursor: pointer;
+  content: url(https://i.pinimg.com/originals/83/46/bc/8346bcb80380e7f21ba1d7ab8b570d85.png);
 `
 
 export const Dropdown = styled.div`
   z-index: 999999;
   background: white;
+  ${(props) =>
+    props.isCategories &&
+    `
   width: 110px;
   position: fixed;
-  right:${props => props.isLoggedIn ? "375px": "445px"};
+  height: 172px;
+  right: ${(props) => (props.isLoggedIn ? '375px' : '445px')};
   top: 60px;
-  display: ${(props) => (props.isActive ? 'block' : 'none')};
+  `}
 
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
-`
-export const ProfileDropDown = styled.div`
-  z-index: 999999;
-  background: white;
-  position: fixed;
+  transition: height 0.3s;
+  transition-timing-function: ease-in;
+  overflow: hidden;
+
+  ${(props) =>
+    props.isProfile &&
+    `
+    position: fixed;
   width: 130px;
-  right:90px;
+  height:194px;
+
   top: 70px;
-  display: ${(props) => (props.isActive ? 'block' : 'none')};
+  `}
+  ${(props) =>
+    !props.isActive &&
+    `
+    width:0px;
+    height:0px;
+  `};
 
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
 `
